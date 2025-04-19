@@ -2,8 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow } from "swiper/modules";
 
 import "swiper/css";
+import "swiper/css/effect-coverflow";
 
 import "./styles.css";
 
@@ -11,14 +13,26 @@ const VerticalSwiper = ({ point }) => {
   return (
     <>
       <Swiper
-        direction={"vertical"}
-        modules={[]}
+        effect={"coverflow"}
+        grabCursor={true}
+        modules={[EffectCoverflow]}
         className="mySwiper"
+        direction={"vertical"}
         loop={true}
+        slidesPerView={1.1}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 50,
+          depth: 200,
+          modifier: 1,
+        }}
       >
         {point?.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="w-full h-full flex flex-col lg:flex-row gap-[2rem] lg:gap-[3rem] bg-[linear-gradient(to_bottom,#FFF,#F1F3F6))] px-[1.5rem] py-[1rem] lg:p-[3rem]">
+          <SwiperSlide
+            key={index}
+            className="bg-[linear-gradient(to_bottom,#FFF,#F1F3F6))]"
+          >
+            <div className="w-full h-full flex flex-col lg:flex-row gap-[2rem] lg:gap-[3rem] bg-[linear-gradient(to_bottom,#FFF,#F1F3F6))] px-[1.5rem] py-[1rem] lg:p-[3rem] -mt-4">
               <div>
                 <Image
                   src={item?.icon}
@@ -41,7 +55,7 @@ const VerticalSwiper = ({ point }) => {
                         "border-t border-t-gray-300 lg:border-t-0 lg:border-l lg:border-l-gray-300"
                       } ${item?.paddingLeft && "lg:pl-[1.5rem]"} ${
                         item?.paddingRight && "lg:pr-[1.5rem]"
-                      }`}
+                      } `}
                     >
                       <Image
                         src="/images/tick.svg"
