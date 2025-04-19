@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import PrimaryButton from "../buttons/primary-button";
 
@@ -17,10 +18,12 @@ const Footer = () => {
         <p className="text-[1rem] md:text-[1.5rem] leading-[1.375rem] md:leading-[2rem] text-center md:text-left">
           Be the First to Get My Upcoming Leadership Playbook
         </p>
-        <PrimaryButton
-          text="Coming Soon - Order Now"
-          icon="/images/amazon.svg"
-        />
+        <Link href={"#"} className="w-full">
+          <PrimaryButton
+            text="Coming Soon - Order Now"
+            icon="/images/amazon.svg"
+          />
+        </Link>
       </div>
     </div>
   );

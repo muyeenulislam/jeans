@@ -4,7 +4,7 @@ import Image from "next/image";
 const WhiteButton = ({ icon, text, ...rest }) => {
   return (
     <button
-      className="flex justify-between items-center bg-white border border-primary p-[1.25rem] md:px-[1.25rem]"
+      className="flex justify-between items-center bg-white border border-primary p-[1.25rem] md:px-[1.25rem] w-full"
       {...rest}
     >
       <p className="text-primary text-[1rem] md:text-[1.125rem] leading-[1.375rem]">

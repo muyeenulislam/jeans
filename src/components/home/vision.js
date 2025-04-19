@@ -40,16 +40,18 @@ const Vision = () => {
         </div>
         <div className="flex flex-col gap-[0.5rem] lg:gap-[1.5rem]">
           <div className="w-full flex flex-col lg:flex-row gap-[1rem]">
-            <PrimaryButton
-              text="Drive Innovation with Me"
-              icon="/images/arrow-right-white.svg"
-              style={{ width: "100%" }}
-            />
-            <WhiteButton
-              text="See My Vision for the Future"
-              icon="/images/arrow-right-primary.svg"
-              style={{ width: "100%" }}
-            />
+            <Link href={"#"} className="w-full">
+              <PrimaryButton
+                text="Drive Innovation with Me"
+                icon="/images/arrow-right-white.svg"
+              />
+            </Link>
+            <Link href={"#"} className="w-full">
+              <WhiteButton
+                text="See My Vision for the Future"
+                icon="/images/arrow-right-primary.svg"
+              />
+            </Link>
           </div>
           <p className="text-primary text-[1rem] lg:text-[1.5rem] text-center lg:text-left leading-[1.35rem] lg:leading-[2rem]">
             Follow for Exclusive Insights on Product Leadership & Business
