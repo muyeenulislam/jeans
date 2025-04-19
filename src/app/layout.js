@@ -1,5 +1,5 @@
 import { ConfigProvider } from "antd";
-import { Montserrat } from "next/font/google";
+import { Gloock, IBM_Plex_Sans } from "next/font/google";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 import Navbar from "@/components/layout/navbar";
@@ -8,7 +8,16 @@ import Footer from "@/components/layout/footer";
 import "./globals.css";
 import "@ant-design/v5-patch-for-react-19";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const glook = Gloock({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-glook",
+});
+const ibm = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-ibm",
+});
 
 export const metadata = {
   title: "Jeans",
@@ -57,7 +66,7 @@ export default function RootLayout({ children }) {
           token: {},
         }}
       >
-        <body className={`${montserrat.className} relative`}>
+        <body className={`${ibm.variable} ${glook.variable} relative`}>
           <AntdRegistry>
             <Navbar />
             <div>{children}</div>
