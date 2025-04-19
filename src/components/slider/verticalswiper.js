@@ -30,9 +30,9 @@ const VerticalSwiper = ({ point }) => {
         {point?.map((item, index) => (
           <SwiperSlide
             key={index}
-            className="bg-[linear-gradient(to_bottom,#FFF,#F1F3F6))]"
+            className="bg-[linear-gradient(to_bottom,#FFF,#F1F3F6))] -mt-1 pt-10"
           >
-            <div className="w-full h-full flex flex-col lg:flex-row gap-[2rem] lg:gap-[3rem] bg-[linear-gradient(to_bottom,#FFF,#F1F3F6))] px-[1.5rem] py-[1rem] lg:p-[3rem] -mt-4">
+            <div className="w-full h-full flex flex-col lg:flex-row gap-[2rem] lg:gap-[3rem] px-[1.5rem] py-[1rem] lg:p-[3rem] ">
               <div>
                 <Image
                   src={item?.icon}
