@@ -4,9 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import PrimaryButton from "../buttons/primary-button";
-import useScreenSize from "@/utils/usescreensize";
-
-import "./styles.css";
+import useScreenSize from "../../utils/usescreensize";
 
 const Hero = () => {
   const screenSize = useScreenSize();

@@ -2,8 +2,8 @@ import { ConfigProvider } from "antd";
 import { Gloock, IBM_Plex_Sans } from "next/font/google";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 
-import Navbar from "@/components/layout/navbar";
-import Footer from "@/components/layout/footer";
+import Navbar from "../components/layout/navbar";
+import Footer from "../components/layout/footer";
 
 import "./globals.css";
 import "@ant-design/v5-patch-for-react-19";

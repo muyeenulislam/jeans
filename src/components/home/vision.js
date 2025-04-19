@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 import PrimaryButton from "../buttons/primary-button";
-
-import "./styles.css";
 import WhiteButton from "../buttons/white-button";
-import Link from "next/link";
 
 const Vision = () => {
   return (
