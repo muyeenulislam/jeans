@@ -67,12 +67,12 @@ const Navbar = () => {
         key={"left"}
         width={"20rem"}
       >
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
           {items?.map((item) => (
             <Link href={item?.route} key={item?.key}>
               <div
-                className={`text-primary hover:bg-lightgray hover:font-semibold transition-all p-2 rounded-xl ${
-                  pathname === item?.route && "bg-lightgray"
+                className={`text-primary hover:bg-lightgray hover:font-semibold p-2 rounded-xl ${
+                  pathname === item?.route && "bg-lightgray font-semibold"
                 }`}
               >
                 {item?.label}
