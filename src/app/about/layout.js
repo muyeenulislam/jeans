@@ -19,7 +19,7 @@ export async function generateMetadata() {
       url,
       images: [
         {
-          url: "./favicon.ico",
+          url: "/images/logo.svg",
           width: 100,
           height: 100,
           alt: "jeans",
@@ -32,7 +32,7 @@ export async function generateMetadata() {
       description,
       images: [
         {
-          url: "./favicon.ico",
+          url: "/images/logo.svg",
           width: 100,
           height: 100,
           alt: "jeans",

@@ -81,14 +81,15 @@ const Navbar = () => {
           ))}
         </div>
       </Drawer>
-
-      <Image
-        src="./images/logo.svg"
-        height={24}
-        width={24}
-        alt="menu"
-        className="w-[8.597rem]"
-      />
+      <Link href={"/"}>
+        <Image
+          src="./images/logo.svg"
+          height={24}
+          width={24}
+          alt="menu"
+          className="w-[8.597rem]"
+        />
+      </Link>
     </div>
   );
 };

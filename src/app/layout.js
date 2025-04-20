@@ -19,47 +19,71 @@ const ibm = IBM_Plex_Sans({
   variable: "--font-ibm",
 });
 
+const title = "Jeans";
+const description = "Jeans";
+const url = `/`;
+
 export const metadata = {
-  title: "Jeans",
-  description: "Jeans Website",
+  title,
+  description,
   icons: [
     {
       rel: "icon",
       type: "icon",
       sizes: "32x32",
-      url: "/images/favicon.svg",
+      url: "/images/logo.svg",
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "16x16",
-      url: "/images/favicon.svg",
+      url: "/images/logo.svg",
     },
     {
       rel: "apple-touch-icon",
       sizes: "180x180",
-      url: "/images/favicon.svg",
+      url: "/images/logo.svg",
     },
   ],
+  alternates: {
+    canonical: url,
+  },
+  openGraph: {
+    title,
+    site_name: "Jeans",
+    description,
+    url,
+    images: [
+      {
+        url: "/images/logo.svg",
+        width: 100,
+        height: 100,
+        alt: "jeans",
+      },
+    ],
+  },
+  twitter: {
+    title,
+    url,
+    description,
+    images: [
+      {
+        url: "/images/logo.svg",
+        width: 100,
+        height: 100,
+        alt: "jeans",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta property="og:title" content={metadata.title} />
-        <meta property="og:description" content={metadata.description} />
-        <meta property="og:url" content="https://www.jeans.com" />
-        <meta property="og:image" content="/images/og-logo.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="jeans.hk" />
-        <meta property="twitter:url" content="https://www.jeans.hk" />
-        <meta name="twitter:title" content={metadata.title} />
-        <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content="/images/og-logo.png" />
-      </head>
       <ConfigProvider
         theme={{
           components: {},
