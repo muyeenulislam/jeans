@@ -19,9 +19,32 @@ const Page = () => {
   });
 
   const reasons = [
-    { label: "none", value: "none" },
-    { label: "none2", value: "none2" },
-    { label: "none3", value: "none3" },
+    { label: "Speaking Engagements", value: "Speaking Engagements" },
+    { label: "Media & Press", value: "Media & Press" },
+    {
+      label: "Book Orders & Bulk Purchases",
+      value: "Book Orders & Bulk Purchases",
+    },
+    {
+      label: "Consulting or Advisory Services",
+      value: "Consulting or Advisory Services",
+    },
+    {
+      label: "Collaboration Opportunities",
+      value: "Collaboration Opportunities",
+    },
+    {
+      label: "Reader Feedback or Testimonials",
+      value: "Reader Feedback or Testimonials",
+    },
+    {
+      label: "Academic or Educational Use",
+      value: "Academic or Educational Use",
+    },
+    {
+      label: "Other",
+      value: "Other",
+    },
   ];
 
   const handleSubmit = () => {

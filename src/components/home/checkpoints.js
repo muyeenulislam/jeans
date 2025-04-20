@@ -37,7 +37,7 @@ const Checkpoints = () => {
         {points?.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col gap-[1rem] lg:gap-[2rem] px-[1rem] py-[1.5rem] lg:p-[3rem] bg-[linear-gradient(to_top,#FFF,#F1F3F6))]"
+            className="flex flex-col gap-[1rem] lg:gap-[2rem] px-[1rem] py-[1.5rem] lg:p-[3rem] bg-[linear-gradient(to_top,#FFF,#F1F3F6))] hover:bg-[linear-gradient(to_bottom,#FFF,#F1F3F6))]"
           >
             <div>
               <Image
