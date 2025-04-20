@@ -159,7 +159,11 @@ const Page = () => {
             </p>
             <p className="text-primary text-[1rem] leading-[1.375rem] lg:text-[1.5rem] lg:leading-[2rem]">
               Follow me on{" "}
-              <Link href={"#"} className="font-semibold underline">
+              <Link
+                href={"https://www.linkedin.com/in/emad-m-65279714/"}
+                className="font-semibold underline"
+                target="_blank"
+              >
                 LinkedIn
               </Link>{" "}
               for insights on strategy & innovation.

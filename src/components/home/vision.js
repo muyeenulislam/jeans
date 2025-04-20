@@ -54,7 +54,11 @@ const Vision = () => {
           <p className="text-primary text-[1rem] lg:text-[1.5rem] text-center lg:text-left leading-[1.35rem] lg:leading-[2rem]">
             Follow for Exclusive Insights on Product Leadership & Business
             Growth{" "}
-            <Link href={"#"} className="underline font-bold">
+            <Link
+              href={"https://www.linkedin.com/in/emad-m-65279714/"}
+              className="underline font-bold"
+              target="_blank"
+            >
               LinkedIn
             </Link>
             .
