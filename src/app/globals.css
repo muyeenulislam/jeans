@@ -59,3 +59,6 @@ body {
 .ant-select {
   font-family: var(--font-ibm) !important;
 }
+.Toastify__toast {
+  font-family: var(--font-ibm) !important;
+}

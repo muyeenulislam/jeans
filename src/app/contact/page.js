@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import Link from "next/link";
 
 import DefaultInput from "../../components/input/defaultinput";
 import DefaultSelect from "../../components/input/defaultselect";
 import DefaultTextbox from "../../components/input/defaulttextbox";
-
 import PrimaryButton from "../../components/buttons/primary-button";
 
 const Page = () => {
@@ -24,6 +24,24 @@ const Page = () => {
     { label: "none3", value: "none3" },
   ];
 
+  const handleSubmit = () => {
+    if (
+      !state?.name ||
+      !state?.email ||
+      !state?.company ||
+      !state?.reason ||
+      !state?.message
+    ) {
+      toast.warn(
+        <div className="text-primary text-[1rem] w-full text-center">
+          Please fill all the fields.
+        </div>
+      );
+      return;
+    } else {
+      console.log(state);
+    }
+  };
   return (
     <div className="flex flex-col lg:flex-row w-full">
       <div className="w-full h-full lg:w-1/2 hidden lg:block">
@@ -121,6 +139,7 @@ const Page = () => {
               <PrimaryButton
                 text={"Partner with Me"}
                 icon={"/images/arrow-right-white.svg"}
+                onClick={handleSubmit}
               />
               <p className="text-[0.875rem] lg:text-[1rem] text-primary leading-[1.25rem] lg:leading-[1.375rem]">
                 * Rest assured. We will not spam at your inbox.
@@ -148,6 +167,17 @@ const Page = () => {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop={false}
+        rtl={false}
+        draggable
+        pauseOnHover
+        toastStyle={{ width: "20rem", minHeight: "4rem", top: "3rem" }}
+        theme="light"
+      />
     </div>
   );
 };
