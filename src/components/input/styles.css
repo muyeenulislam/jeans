@@ -1,0 +1,20 @@
+.default-select.ant-select-single {
+  height: auto !important;
+  font-size: 1rem !important;
+}
+.default-select .ant-select-selector .ant-select-selection-search-input {
+  height: auto !important;
+  font-size: 1rem !important;
+}
+.default-select.ant-select-single.ant-select-show-arrow
+  .ant-select-selection-placeholder {
+  font-size: 1rem !important;
+  color: rgba(19, 35, 51, 0.6) !important;
+}
+.default-select .ant-select-selector {
+  border: none !important;
+  border-bottom: 1px solid #99a1af !important;
+  background: #f1f3f6 !important;
+  padding: 0 1.25rem !important;
+  height: 4.4rem !important;
+}
