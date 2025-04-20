@@ -52,3 +52,7 @@ body {
 .family-glook {
   font-family: var(--font-glook);
 }
+
+.ant-drawer .ant-drawer-content {
+  font-family: var(--font-ibm) !important;
+}
