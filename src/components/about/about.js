@@ -57,7 +57,7 @@ const About = () => {
           <p className="text-primary text-[1rem] lg:text-[1.5rem] leading-[1.35rem] lg:leading-[2rem]">
             Let’s Build the Future Together:
           </p>
-          <Link href={"#"} className="w-full">
+          <Link href={"#"} className="w-full" id="top-section">
             <PrimaryButton
               text="Scaling Innovation? Let’s Talk"
               icon="/images/arrow-right-white.svg"

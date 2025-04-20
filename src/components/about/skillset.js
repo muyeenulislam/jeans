@@ -41,7 +41,7 @@ const Skillset = () => {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col" id="bottom-section">
       <div className="px-[1.25rem] pt-[4rem] pb-[2rem] lg:px-[12.5rem] lg:pt-[8rem] lg:pb-[4rem] flex flex-col gap-[1rem] lg:gap-[3rem]">
         <p className="text-primary text-[2.125rem] leading-[2.75rem] lg:text-[3.75rem] lg:leading-[4.3875rem] lg:tracking-[0.075rem] family-glook lg:w-[49rem]">
           Unicorn Skill Set – The Rare Fusion of Design, Technology & Strategy
