@@ -8,8 +8,12 @@ const SwiperCard = ({ item, i, progress, range, targetScale }) => {
   return (
     <div className="h-screen flex items-center justify-center sticky top-0">
       <motion.div
-        className="relative top-[-25%] w-full h-full lg:h-[30rem] flex flex-col lg:flex-row gap-[2rem] lg:gap-[3rem] px-[1.5rem] py-[1rem] lg:p-[3rem] bg-[linear-gradient(to_bottom,#FFF,#F1F3F6))] mt-[10rem] lg:mt-0"
-        style={{ top: `calc(-10% + ${i * 4}rem)`, scale }}
+        className="relative top-[-25%] w-full h-full lg:h-[30rem] flex flex-col lg:flex-row gap-[2rem] lg:gap-[3rem] px-[1.5rem] py-[1rem] lg:p-[3rem] bg-[linear-gradient(to_bottom,#FFF,#F1F3F6))] mt-[10rem] lg:mt-0 "
+        style={{
+          top: `calc(-10% + ${i * 3.5}rem)`,
+          scale,
+          boxShadow: i > 0 && "0px -36px 35px -45px rgba(0,0,0,0.75)",
+        }}
       >
         <div>
           <Image
