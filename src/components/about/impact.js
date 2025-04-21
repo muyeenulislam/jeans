@@ -1,6 +1,7 @@
 import React from "react";
 
 import AboutSwiper from "../slider/aboutswiper";
+import AboutSlider from "../slider/aboutslider";
 
 const Impact = () => {
   const points = [
@@ -87,7 +88,8 @@ const Impact = () => {
         Executive Impact Areas
       </div>
       <div className="lg:px-[12.5rem]">
-        <AboutSwiper point={points} />
+        {/* <AboutSwiper points={points} /> */}
+        <AboutSlider points={points} />
       </div>
     </div>
   );
