@@ -83,7 +83,7 @@ const Impact = () => {
     },
   ];
   return (
-    <div className="py-[4rem] lg:py-[8rem] bg-lightgray">
+    <div className="py-[4rem] pb-[6rem] lg:py-[8rem] bg-lightgray">
       <div className="text-primary text-[3rem] lg:text-[5.5rem] family-glook leading-[3rem] lg:leading-[6rem] px-[1.25rem] lg:px-[12.5rem] pb-[2rem] lg:pb-[4rem]">
         Executive Impact Areas
       </div>
