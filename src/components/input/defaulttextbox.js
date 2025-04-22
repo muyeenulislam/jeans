@@ -6,6 +6,7 @@ const DefaultTextbox = ({
   style,
   value,
   rows = 3,
+  error,
   ...rest
 }) => {
   return (
@@ -19,6 +20,7 @@ const DefaultTextbox = ({
         rows={rows}
         {...rest}
       />
+      {error && <span className="text-red-600 text-sm mt-1">{error}</span>}
     </div>
   );
 };

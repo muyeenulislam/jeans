@@ -17,6 +17,13 @@ const Page = () => {
     reason: null,
     message: "",
   });
+  const [error, setError] = useState({
+    name: "",
+    email: "",
+    company: "",
+    reason: null,
+    message: "",
+  });
 
   const reasons = [
     { label: "Speaking Engagements", value: "Speaking Engagements" },
@@ -47,22 +54,32 @@ const Page = () => {
     },
   ];
 
+  const isValidEmail = (email) => {
+    // Basic email pattern
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = () => {
-    if (
-      !state?.name ||
-      !state?.email ||
-      !state?.company ||
-      !state?.reason ||
-      !state?.message
-    ) {
-      toast.warn(
-        <div className="text-primary text-[1rem] w-full text-center">
-          Please fill all the fields.
-        </div>
-      );
-      return;
-    } else {
+    const newErrors = {
+      name: state.name ? "" : "Name is required",
+      email: !state.email
+        ? "Email is required"
+        : !isValidEmail(state.email)
+        ? "Invalid email address"
+        : "",
+      company: state.company ? "" : "Company/organization name is required",
+      reason: state.reason ? "" : "Please select a reason",
+      message: state.message ? "" : "Message is required",
+    };
+
+    setError(newErrors);
+
+    const hasErrors = Object.values(newErrors).some((msg) => msg !== "");
+
+    if (!hasErrors) {
       console.log(state);
+      toast.success("Submitted successfully!");
     }
   };
   return (
@@ -122,39 +139,58 @@ const Page = () => {
               <DefaultInput
                 label={"Name"}
                 placeholder={"Enter your name"}
-                value={state?.name}
-                onChange={(e) => setState({ ...state, name: e.target.value })}
+                value={state.name}
+                onChange={(e) => {
+                  setState({ ...state, name: e.target.value });
+                  if (error.name) setError({ ...error, name: "" });
+                }}
+                error={error.name}
               />
+
               <DefaultInput
                 label={"Email"}
                 type="email"
                 placeholder={"Enter email address"}
-                value={state?.email}
-                onChange={(e) => setState({ ...state, email: e.target.value })}
+                value={state.email}
+                onChange={(e) => {
+                  setState({ ...state, email: e.target.value });
+                  if (error.email) setError({ ...error, email: "" });
+                }}
+                error={error.email}
               />
+
               <DefaultInput
                 label={"Company/Organization"}
                 placeholder={"Enter your company or organization name"}
-                value={state?.company}
-                onChange={(e) =>
-                  setState({ ...state, company: e.target.value })
-                }
+                value={state.company}
+                onChange={(e) => {
+                  setState({ ...state, company: e.target.value });
+                  if (error.company) setError({ ...error, company: "" });
+                }}
+                error={error.company}
               />
+
               <DefaultSelect
                 label={"Reason of Inquiry"}
                 placeholder={"Choose an option"}
-                value={state?.reason}
+                value={state.reason}
                 items={reasons}
-                onChange={(e) => setState({ ...state, reason: e })}
+                onChange={(e) => {
+                  setState({ ...state, reason: e });
+                  if (error.reason) setError({ ...error, reason: "" });
+                }}
+                error={error.reason}
               />
               <div className="lg:col-span-2">
                 <DefaultTextbox
                   label={"Your Message"}
                   placeholder={"Write your message here..."}
-                  value={state?.company}
-                  onChange={(e) =>
-                    setState({ ...state, company: e.target.value })
-                  }
+                  value={state.message}
+                  onChange={(e) => {
+                    setState({ ...state, message: e.target.value });
+                    if (error.message) setError({ ...error, message: "" });
+                  }}
+                  error={error.message}
                 />
               </div>
             </div>
@@ -202,7 +238,8 @@ const Page = () => {
         rtl={false}
         draggable
         pauseOnHover
-        toastStyle={{ width: "20rem", minHeight: "4rem", top: "3rem" }}
+        closeButton={false}
+        toastStyle={{ width: "15rem", minHeight: "4rem", top: "3rem" }}
         theme="light"
       />
     </div>

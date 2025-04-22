@@ -10,6 +10,7 @@ const DefaultSelect = ({
   items = [],
   type = "text",
   value,
+  error,
   ...rest
 }) => {
   return (
@@ -38,6 +39,7 @@ const DefaultSelect = ({
           {...rest}
         />
       </ConfigProvider>
+      {error && <span className="text-red-600 text-sm mt-1">{error}</span>}
     </div>
   );
 };
