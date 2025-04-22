@@ -38,13 +38,13 @@ const Vision = () => {
         </div>
         <div className="flex flex-col gap-[0.5rem] lg:gap-[1.5rem]">
           <div className="w-full flex flex-col lg:flex-row gap-[1rem]">
-            <Link href={"#"} className="w-full">
+            <Link href={"/contact"} className="w-full">
               <PrimaryButton
                 text="Drive Innovation with Me"
                 icon="/images/arrow-right-white.svg"
               />
             </Link>
-            <Link href={"#"} className="w-full">
+            <Link href={"/about"} className="w-full">
               <WhiteButton
                 text="See My Vision for the Future"
                 icon="/images/arrow-right-primary.svg"
