@@ -19,13 +19,11 @@ const ibm = IBM_Plex_Sans({
   variable: "--font-ibm",
 });
 
-const title = "Jeans";
-const description = "Jeans";
-const url = `/`;
-
 export const metadata = {
-  title,
-  description,
+  title:
+    "CEO in Jeans – A Real-World Guide to Bold Leadership & Human-Centered Decisions",
+  description:
+    "CEO in Jeans is not just a leadership book. It's a raw, real, and refreshing journey into decision-making, ambition, and leading with heart in a suit-free world. Written by Emad Masoud., it blends strategy, humility, and personal fire.",
   icons: [
     {
       rel: "icon",
@@ -46,13 +44,14 @@ export const metadata = {
     },
   ],
   alternates: {
-    canonical: url,
+    canonical: "https://emadmasoud.com",
   },
   openGraph: {
-    title,
-    site_name: "Jeans",
-    description,
-    url,
+    title: "CEO in Jeans – A Real-World Guide to Bold Leadership",
+    site_name: "CEO in Jeans – A Real-World Guide to Bold Leadership",
+    description:
+      "More than a business book, CEO in Jeans is a personal journey about leading with conviction, clarity, and no mask.",
+    url: "https://emadmasoud.com",
     images: [
       {
         url: "/images/favicon-light.png",
@@ -63,9 +62,10 @@ export const metadata = {
     ],
   },
   twitter: {
-    title,
-    url,
-    description,
+    title: "CEO in Jeans – A Real-World Guide to Bold Leadership",
+    description:
+      "More than a business book, CEO in Jeans is a personal journey about leading with conviction, clarity, and no mask.",
+    url: "https://emadmasoud.com",
     images: [
       {
         url: "/images/favicon-light.png",
