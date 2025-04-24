@@ -24,6 +24,10 @@ export const metadata = {
     "CEO in Jeans – A Real-World Guide to Bold Leadership & Human-Centered Decisions",
   description:
     "CEO in Jeans is not just a leadership book. It's a raw, real, and refreshing journey into decision-making, ambition, and leading with heart in a suit-free world. Written by Emad Masoud., it blends strategy, humility, and personal fire.",
+  author: "Emad Masoud",
+  keywords:
+    "leadership, CEO book, Emad N, business strategy, human-centered leadership, executive book, decision-making, entrepreneurship, real-world leadership",
+  type: "website",
   icons: [
     {
       rel: "icon",
@@ -52,6 +56,8 @@ export const metadata = {
     description:
       "More than a business book, CEO in Jeans is a personal journey about leading with conviction, clarity, and no mask.",
     url: "https://emadmasoud.com",
+    type: "website",
+    author: "Emad Masoud",
     images: [
       {
         url: "/images/favicon-light.png",
@@ -66,6 +72,8 @@ export const metadata = {
     description:
       "More than a business book, CEO in Jeans is a personal journey about leading with conviction, clarity, and no mask.",
     url: "https://emadmasoud.com",
+    type: "website",
+    author: "Emad Masoud",
     images: [
       {
         url: "/images/favicon-light.png",
