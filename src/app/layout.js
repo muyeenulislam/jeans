@@ -31,18 +31,18 @@ export const metadata = {
       rel: "icon",
       type: "icon",
       sizes: "32x32",
-      url: "/images/logo.svg",
+      url: "/images/favicon-light.ico",
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "16x16",
-      url: "/images/logo.svg",
+      url: "/images/favicon-light.ico",
     },
     {
       rel: "apple-touch-icon",
       sizes: "180x180",
-      url: "/images/logo.svg",
+      url: "/images/favicon-light.ico",
     },
   ],
   alternates: {
@@ -55,7 +55,7 @@ export const metadata = {
     url,
     images: [
       {
-        url: "/images/logo.svg",
+        url: "/images/favicon-light.png",
         width: 100,
         height: 100,
         alt: "jeans",
@@ -68,7 +68,7 @@ export const metadata = {
     description,
     images: [
       {
-        url: "/images/logo.svg",
+        url: "/images/favicon-light.png",
         width: 100,
         height: 100,
         alt: "jeans",
