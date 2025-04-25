@@ -24,6 +24,8 @@ const Page = () => {
     reason: null,
     message: "",
   });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   const reasons = [
     { label: "Speaking Engagements", value: "Speaking Engagements" },
@@ -77,6 +79,7 @@ const Page = () => {
     const hasErrors = Object.values(newErrors).some((msg) => msg !== "");
 
     if (!hasErrors) {
+      setLoading(true);
       const sendMail = await fetch(
         "https://5b0coocclb.execute-api.us-east-1.amazonaws.com/ceoinjeanscontact",
         {
@@ -99,7 +102,6 @@ const Page = () => {
         sendMail?.status === 200 &&
         response?.message === "Contact submission successful"
       ) {
-        toast.success("Submitted successfully!");
         setState({
           name: "",
           email: "",
@@ -107,13 +109,20 @@ const Page = () => {
           reason: null,
           message: "",
         });
+        setFormSubmitted(true);
+        setLoading(false);
         return;
       } else {
         toast.error("Something went wrong");
+        setLoading(false);
         return;
       }
     }
   };
+  const handleResetSubmit = () => {
+    setFormSubmitted(false);
+  };
+
   return (
     <div className="flex flex-col lg:flex-row w-full">
       <div className="w-full h-full lg:w-1/2 hidden lg:block">
@@ -163,74 +172,102 @@ const Page = () => {
           </p>
           <div className="h-[0.0625rem] bg-[#99A1A9]"></div>
           {/* form */}
-          <div className="flex flex-col gap-[1.5rem] lg:gap-[2rem]">
-            <h3 className="text-primary text-[1.125rem] leading-[1.6875rem] lg:text-[1.5rem] lg:leading-[2rem]">
-              Enter your information below
-            </h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1rem]">
-              <DefaultInput
-                label={"Name"}
-                placeholder={"Enter your name"}
-                value={state.name}
-                onChange={(e) => {
-                  setState({ ...state, name: e.target.value });
-                  if (error.name) setError({ ...error, name: "" });
-                }}
-                error={error.name}
-              />
-
-              <DefaultInput
-                label={"Email"}
-                type="email"
-                placeholder={"Enter email address"}
-                value={state.email}
-                onChange={(e) => {
-                  setState({ ...state, email: e.target.value });
-                  if (error.email) setError({ ...error, email: "" });
-                }}
-                error={error.email}
-              />
-
-              <DefaultInput
-                label={"Company/Organization"}
-                placeholder={"Enter your company or organization name"}
-                value={state.company}
-                onChange={(e) => {
-                  setState({ ...state, company: e.target.value });
-                  if (error.company) setError({ ...error, company: "" });
-                }}
-                error={error.company}
-              />
-
-              <DefaultSelect
-                label={"Reason of Inquiry"}
-                placeholder={"Choose an option"}
-                value={state.reason}
-                items={reasons}
-                onChange={(e) => {
-                  setState({ ...state, reason: e });
-                  if (error.reason) setError({ ...error, reason: "" });
-                }}
-                error={error.reason}
-              />
-              <div className="lg:col-span-2">
-                <DefaultTextbox
-                  label={"Your Message"}
-                  placeholder={"Write your message here..."}
-                  value={state.message}
-                  onChange={(e) => {
-                    setState({ ...state, message: e.target.value });
-                    if (error.message) setError({ ...error, message: "" });
-                  }}
-                  error={error.message}
+          <div
+            className={`flex flex-col ${
+              formSubmitted
+                ? "gap-[2rem] lg:gap-[4rem]"
+                : "gap-[1.5rem] lg:gap-[2rem]"
+            } `}
+          >
+            {formSubmitted ? (
+              <div className="w-full flex flex-col items-center justify-center gap-[1rem] lg:gap-[1.5rem]">
+                <Image
+                  src="/images/checkmark-circle.svg"
+                  height={64}
+                  width={64}
+                  alt="checkmark"
                 />
+                <div className="text-primary text-center text-[1rem] lg:text-[1.5rem] leading-[1.5rem] lg:leading-[2rem]">
+                  Thank you for your submission!
+                  <br />
+                  We will be get in touch with your shortly.
+                </div>
               </div>
-            </div>
+            ) : (
+              <>
+                <h3 className="text-primary text-[1.125rem] leading-[1.6875rem] lg:text-[1.5rem] lg:leading-[2rem]">
+                  Enter your information below
+                </h3>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1rem]">
+                  <DefaultInput
+                    label={"Name"}
+                    placeholder={"Enter your name"}
+                    value={state.name}
+                    onChange={(e) => {
+                      setState({ ...state, name: e.target.value });
+                      if (error.name) setError({ ...error, name: "" });
+                    }}
+                    error={error.name}
+                  />
+
+                  <DefaultInput
+                    label={"Email"}
+                    type="email"
+                    placeholder={"Enter email address"}
+                    value={state.email}
+                    onChange={(e) => {
+                      setState({ ...state, email: e.target.value });
+                      if (error.email) setError({ ...error, email: "" });
+                    }}
+                    error={error.email}
+                  />
+
+                  <DefaultInput
+                    label={"Company/Organization"}
+                    placeholder={"Enter your company or organization name"}
+                    value={state.company}
+                    onChange={(e) => {
+                      setState({ ...state, company: e.target.value });
+                      if (error.company) setError({ ...error, company: "" });
+                    }}
+                    error={error.company}
+                  />
+
+                  <DefaultSelect
+                    label={"Reason of Inquiry"}
+                    placeholder={"Choose an option"}
+                    value={state.reason}
+                    items={reasons}
+                    onChange={(e) => {
+                      setState({ ...state, reason: e });
+                      if (error.reason) setError({ ...error, reason: "" });
+                    }}
+                    error={error.reason}
+                  />
+                  <div className="lg:col-span-2">
+                    <DefaultTextbox
+                      label={"Your Message"}
+                      placeholder={"Write your message here..."}
+                      value={state.message}
+                      onChange={(e) => {
+                        setState({ ...state, message: e.target.value });
+                        if (error.message) setError({ ...error, message: "" });
+                      }}
+                      error={error.message}
+                    />
+                  </div>
+                </div>
+              </>
+            )}
             <div className="flex flex-col gap-[0.5rem] lg:gap-[1rem]">
               <PrimaryButton
-                text={"Partner with Me"}
+                text={
+                  formSubmitted ? "Submit an another Query" : "Partner with Me"
+                }
                 icon={"/images/arrow-right-white.svg"}
-                onClick={handleSubmit}
+                onClick={formSubmitted ? handleResetSubmit : handleSubmit}
+                loading={isLoading}
+                disabled={isLoading}
               />
               <p className="text-[0.875rem] lg:text-[1rem] text-primary leading-[1.25rem] lg:leading-[1.375rem]">
                 * Rest assured. We will not spam at your inbox.
