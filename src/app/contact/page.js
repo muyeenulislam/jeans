@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import Link from "next/link";
+import { ToastContainer, toast } from "react-toastify";
 
 import DefaultInput from "../../components/input/defaultinput";
 import DefaultSelect from "../../components/input/defaultselect";
@@ -55,12 +55,11 @@ const Page = () => {
   ];
 
   const isValidEmail = (email) => {
-    // Basic email pattern
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const newErrors = {
       name: state.name ? "" : "Name is required",
       email: !state.email
@@ -78,8 +77,41 @@ const Page = () => {
     const hasErrors = Object.values(newErrors).some((msg) => msg !== "");
 
     if (!hasErrors) {
-      console.log(state);
-      toast.success("Submitted successfully!");
+      const sendMail = await fetch(
+        "https://5b0coocclb.execute-api.us-east-1.amazonaws.com/ceoinjeanscontact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: state?.name,
+            email: state?.email,
+            company: state?.company,
+            reason: state?.reason,
+            message: state?.message,
+          }),
+        }
+      );
+      const response = await sendMail.json();
+
+      if (
+        sendMail?.status === 200 &&
+        response?.message === "Contact submission successful"
+      ) {
+        toast.success("Submitted successfully!");
+        setState({
+          name: "",
+          email: "",
+          company: "",
+          reason: null,
+          message: "",
+        });
+        return;
+      } else {
+        toast.error("Something went wrong");
+        return;
+      }
     }
   };
   return (
