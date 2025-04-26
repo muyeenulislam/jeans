@@ -68,10 +68,10 @@ const Vision = () => {
 
       <div className="w-full lg:w-1/2">
         <Image
-          src={"/images/about-image.png"}
+          src={"/images/about-image.webp"}
           alt="about"
-          height={500}
-          width={500}
+          height={990}
+          width={960}
           className="w-full h-full object-cover"
         />
       </div>

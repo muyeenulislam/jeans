@@ -127,10 +127,10 @@ const Page = () => {
     <div className="flex flex-col lg:flex-row w-full">
       <div className="w-full h-full lg:w-1/2 hidden lg:block">
         <Image
-          src={"/images/contact-image.png"}
+          src={"/images/contact-image.webp"}
           alt="contact"
-          height={500}
-          width={500}
+          height={1080}
+          width={960}
           className="w-full h-full object-cover"
         />
       </div>

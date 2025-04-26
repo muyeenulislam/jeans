@@ -68,10 +68,10 @@ const About = () => {
 
       <div className="w-full lg:w-1/2 hidden lg:block">
         <Image
-          src={"/images/about-page-image.png"}
+          src={"/images/about-page-image.webp"}
           alt="hero banner"
-          height={500}
-          width={500}
+          height={1400}
+          width={900}
           className="w-full h-full object-cover"
         />
       </div>

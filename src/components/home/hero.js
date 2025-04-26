@@ -37,12 +37,12 @@ const Hero = () => {
         <Image
           src={
             screenSize?.width > 1024
-              ? "/images/hero-image.svg"
-              : "/images/hero-image-mobile.svg"
+              ? "/images/hero-image.webp"
+              : "/images/hero-image-mobile.webp"
           }
           alt="hero banner"
-          height={500}
-          width={500}
+          height={3000}
+          width={3000}
           className="w-full h-full object-cover"
         />
       </div>
