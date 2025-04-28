@@ -19,7 +19,7 @@ const About = () => {
         </div>
         <div className="w-full lg:hidden">
           <Image
-            src={"/images/about-page-image.png"}
+            src={"/images/about-page-image.webp"}
             alt="contact"
             height={500}
             width={500}

@@ -158,7 +158,7 @@ const Page = () => {
         </div>
         <div className="w-full lg:hidden">
           <Image
-            src={"/images/contact-image.png"}
+            src={"/images/contact-image.webp"}
             alt="contact"
             height={500}
             width={500}
